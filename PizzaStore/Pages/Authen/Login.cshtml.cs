@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -45,12 +45,15 @@ namespace PizzaStore.Pages.Authen
                 {
                     // Authentication successful
                     HttpContext.Session.SetString("username", user.FullName);
+                    HttpContext.Session.SetInt32("role", 0);
                     return Redirect("/Products");
                     
                 }
                 if (user != null && VerifyPassword(Password, user.Password) && user.Type == 1)
                 {
-                    return Redirect("/Error");
+                    HttpContext.Session.SetString("username", user.FullName);
+                    HttpContext.Session.SetInt32("role", 1);
+                    return Redirect("/Index");
 
                 }
                 
@@ -60,6 +63,15 @@ namespace PizzaStore.Pages.Authen
             // Authentication failed or invalid form data
             Msg = "Invalid username or password";
             return Page();
+        }
+
+        public IActionResult OnPostLogout()
+        {
+            // Xóa các thông tin đăng nhập khỏi session
+            HttpContext.Session.Clear();
+
+            // Chuyển hướng đến trang đăng nhập hoặc trang chính của ứng dụng
+            return Redirect("/Authen/Login");
         }
 
         private bool VerifyPassword(string enteredPassword, string storedPassword)

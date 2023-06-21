@@ -10,8 +10,9 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>PizzaStore.DataAccess.Assignment2Context</WebStackScaffolding_DbContextTypeFullName>
     <ActiveDebugProfile>PizzaStore</ActiveDebugProfile>
-    <RazorPage_SelectedScaffolderID>RazorPageScaffolder</RazorPage_SelectedScaffolderID>
-    <RazorPage_SelectedScaffolderCategoryPath>root/Common/RazorPage</RazorPage_SelectedScaffolderCategoryPath>
+    <RazorPage_SelectedScaffolderID>RazorPagesLayoutScaffolder</RazorPage_SelectedScaffolderID>
+    <RazorPage_SelectedScaffolderCategoryPath>root/Layouts</RazorPage_SelectedScaffolderCategoryPath>
+    <WebStackScaffolding_EnablerDialogWidth>650.4</WebStackScaffolding_EnablerDialogWidth>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

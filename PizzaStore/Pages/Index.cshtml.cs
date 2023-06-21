@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using PizzaStore.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +12,19 @@ namespace PizzaStore.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly PizzaStore.DataAccess.Assignment2Context _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(PizzaStore.DataAccess.Assignment2Context context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public void OnGet()
-        {
+        public IList<Product> Product { get; set; }
 
+        public async Task OnGetAsync()
+        {
+            Product = await _context.Products.Include(p => p.Category)
+                .ToListAsync();
         }
     }
 }

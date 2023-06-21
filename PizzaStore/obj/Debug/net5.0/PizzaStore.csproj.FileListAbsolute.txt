@@ -155,3 +155,8 @@ F:\FPTU\SUMMER2023\PRN211\RazorPageAssignment2\PizzaStore\PizzaStore\obj\Debug\n
 F:\FPTU\SUMMER2023\PRN211\RazorPageAssignment2\PizzaStore\PizzaStore\obj\Debug\net5.0\Razor\Pages\Products\Index.cshtml.g.cs
 F:\FPTU\SUMMER2023\PRN211\RazorPageAssignment2\PizzaStore\PizzaStore\obj\Debug\net5.0\Razor\Pages\Authen\Login.cshtml.g.cs
 F:\FPTU\SUMMER2023\PRN211\RazorPageAssignment2\PizzaStore\PizzaStore\obj\Debug\net5.0\Razor\Pages\Authen\SignUp.cshtml.g.cs
+F:\FPTU\SUMMER2023\PRN211\RazorPageAssignment2\PizzaStore\PizzaStore\obj\Debug\net5.0\Razor\Pages\Accounts\Create.cshtml.g.cs
+F:\FPTU\SUMMER2023\PRN211\RazorPageAssignment2\PizzaStore\PizzaStore\obj\Debug\net5.0\Razor\Pages\Accounts\Delete.cshtml.g.cs
+F:\FPTU\SUMMER2023\PRN211\RazorPageAssignment2\PizzaStore\PizzaStore\obj\Debug\net5.0\Razor\Pages\Accounts\Details.cshtml.g.cs
+F:\FPTU\SUMMER2023\PRN211\RazorPageAssignment2\PizzaStore\PizzaStore\obj\Debug\net5.0\Razor\Pages\Accounts\Edit.cshtml.g.cs
+F:\FPTU\SUMMER2023\PRN211\RazorPageAssignment2\PizzaStore\PizzaStore\obj\Debug\net5.0\Razor\Pages\Accounts\Index.cshtml.g.cs
