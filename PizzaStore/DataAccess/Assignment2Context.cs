@@ -40,11 +40,11 @@ namespace PizzaStore.DataAccess
 
             modelBuilder.Entity<Account>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Account");
 
-                entity.Property(e => e.AccountId).HasColumnName("AccountID");
+                entity.Property(e => e.AccountId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("AccountID");
 
                 entity.Property(e => e.FullName)
                     .HasMaxLength(50)

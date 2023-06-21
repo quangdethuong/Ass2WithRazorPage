@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Index";
+   
 }
 
 <h1>Index</h1>
@@ -50,10 +51,10 @@
                 @Html.DisplayFor(modelItem => item.ProductImage)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryId)
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Supplier.SupplierId)
+                    @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ProductId">Edit</a> |

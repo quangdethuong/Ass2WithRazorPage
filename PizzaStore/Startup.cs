@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +10,8 @@ using PizzaStore.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 
 namespace PizzaStore
@@ -28,9 +31,16 @@ namespace PizzaStore
             services.AddRazorPages();
             var stringConnectdb = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<Assignment2Context>(options => options.UseSqlServer(stringConnectdb));
+            services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.All }));
+          
             services.AddSession(options => {
-                options.IdleTimeout = TimeSpan.FromMinutes(10);//You can set Time    
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Set the session timeout duration
+
+                //options.Cookie.Name = "YourSessionCookieName"; // Set a name for your session cookie
+                //options.Cookie.HttpOnly = true; // Ensure that the session cookie is accessible only via HTTP
+                //options.Cookie.IsEssential = true; // Make the session cookie essential for GDPR compliance
             });
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,9 +61,10 @@ namespace PizzaStore
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseSession();
             app.UseAuthorization();
 
+            app.UseSession();
+            //app.UseCookiePolicy();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

@@ -14,37 +14,43 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Product.ProductId" class="control-label"></label>
-                <input asp-for="Product.ProductId" class="form-control" />
-                <span asp-validation-for="Product.ProductId" class="text-danger"></span>
+                <label asp-for="Productss.ProductId" class="control-label"></label>
+                <input asp-for="Productss.ProductId" class="form-control" />
+                <span asp-validation-for="Productss.ProductId" class="text-danger"></span>
+            </div>
+            <span>
+                @if (!string.IsNullOrEmpty(Model.Msg))
+                {
+                    <div class="alert alert-danger">@Model.Msg</div>
+                }
+            </span>
+            <div class="form-group">
+                <label asp-for="Productss.ProductName" class="control-label"></label>
+                <input asp-for="Productss.ProductName" class="form-control" />
+                <span asp-validation-for="Productss.ProductName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Product.ProductName" class="control-label"></label>
-                <input asp-for="Product.ProductName" class="form-control" />
-                <span asp-validation-for="Product.ProductName" class="text-danger"></span>
+                <label asp-for="Productss.SupplierId" class="control-label"></label>
+                <select asp-for="Productss.SupplierId" class ="form-control" asp-items="ViewBag.SupplierId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Product.SupplierId" class="control-label"></label>
-                <select asp-for="Product.SupplierId" class ="form-control" asp-items="ViewBag.SupplierId"></select>
+                <label asp-for="Productss.CategoryId" class="control-label"></label>
+                <select asp-for="Productss.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Product.CategoryId" class="control-label"></label>
-                <select asp-for="Product.CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+                <label asp-for="Productss.QuantityPerUnit" class="control-label"></label>
+                <input asp-for="Productss.QuantityPerUnit" class="form-control" />
+                <span asp-validation-for="Productss.QuantityPerUnit" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Product.QuantityPerUnit" class="control-label"></label>
-                <input asp-for="Product.QuantityPerUnit" class="form-control" />
-                <span asp-validation-for="Product.QuantityPerUnit" class="text-danger"></span>
+                <label asp-for="Productss.UnitPrice" class="control-label"></label>
+                <input asp-for="Productss.UnitPrice" class="form-control" />
+                <span asp-validation-for="Productss.UnitPrice" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Product.UnitPrice" class="control-label"></label>
-                <input asp-for="Product.UnitPrice" class="form-control" />
-                <span asp-validation-for="Product.UnitPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Product.ProductImage" class="control-label"></label>
-                <input asp-for="Product.ProductImage" class="form-control" />
-                <span asp-validation-for="Product.ProductImage" class="text-danger"></span>
+                <label asp-for="Productss.ProductImage" class="control-label"></label>
+                <input asp-for="Productss.ProductImage" class="form-control" />
+                <span asp-validation-for="Productss.ProductImage" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
